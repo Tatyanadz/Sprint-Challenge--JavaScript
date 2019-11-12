@@ -106,9 +106,9 @@ console.log(contactInfo);
 const unisWithUni = [];
 
 for(i = 0; i < graduates.length; i++){
-  graudates[i].university;
-  if(university == 'Uni')
-  unisWithUni.push(graduates[i].university);
+
+  if (graduates[i].university.includes("Uni")) {
+    unisWithUni.push(graduates[i].university);}
 }
 
 console.log(unisWithUni);
@@ -135,8 +135,11 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = zooAnimals.forEach(animal => {displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}`)});
+const displayNames = [];
+zooAnimals.forEach(zooAnimal => displayNames.push(`Name:${zooAnimal.animal_name}, Scientific:${zooAnimal.scientific_name}.`));
 console.log(displayNames);
+// const displayNames = zooAnimals.forEach(animal => {displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}`)});
+// console.log(displayNames(zooAnimals));
 
 /* Request 2: .map()
 
@@ -153,12 +156,12 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 const lowPopulationAnimals = [];
-for(i = 0; i < zooAnimals.length; i++){
-  zooAnimals[i].population;
-  if(population < 5)
-  lowPopulationAnimals.push(zooAnimals[i].population);
-}
-
+// for(i = 0; i < zooAnimals.length; i++){
+//   zooAnimals[i].population;
+//   if(population < 5)
+//   lowPopulationAnimals.push(zooAnimals[i].population);
+// }
+lowPopulationAnimals.push(zooAnimals.filter(animal => animal.population < 5))
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
