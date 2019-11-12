@@ -7,10 +7,7 @@
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 function consume(a, b, cb) {
-  console.log(a[1]);
-  console.log(b[2]);
-  return callback(cb)
-  
+  return cb(a, b); 
 }
 
 
@@ -22,13 +19,12 @@ function consume(a, b, cb) {
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
-function add(Sum, callback) {
-  const sum = (num1, num2) => num1 + num2;
-  return callback(Sum.reduce(sum, 0));
+function add(a, b) {
+  return a + b;
 }
 
-function multiply(num1, num2, callback) {
-  return callback(num1 * num2);
+function multiply(a, b) {
+  return a * b;
 }
 
 function greeting(first, last){
